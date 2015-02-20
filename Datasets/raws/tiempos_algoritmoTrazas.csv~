@@ -1,0 +1,8 @@
+#Consulta localizaTrazasNodos2 de una semana de datos con distintas ventanas de tamaño
+
+VENTANA, ROWS, DURACION, FETCH
+5,5275,10.611,0.516
+15,3989,25.025,0.365
+30,3345,47.780,2.278
+60,2667,92.528,0.250
+120,2128,175.168,0.208
