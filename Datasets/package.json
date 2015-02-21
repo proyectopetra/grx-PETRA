@@ -1,0 +1,15 @@
+{
+  "name": "proyecto-petra",
+  "version": "1.0.0",
+  "main": "concat.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "through": "^2.3.6"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "'https://github.com/global-urban-datafest/grx-PETRA'"
+  }
+}
