@@ -1,4 +1,4 @@
-idNodo idDispositivo tfin tinicio tdiferencia latitud longitud majordeviceclass minordeviceclass serviceclass fabricante
+idNodo,idDispositivo,tfin tinicio,tdiferencia,latitud,longitud,majordeviceclass,minordeviceclass,serviceclass,fabricante
 1388396196672,66413fafe456f8048bba70cba951ebdb78bff247,1395635674198,1395635674096,102,37.5123,-6.02722,1024,8,2359296,"novero GmbH"
 1388396196672,ef264df8a68f95bcd80980840199835b25eeeb61,1395638615489,1395638615387,102,37.5123,-6.02722,512,12,5898240,"Clipcomm Inc."
 1388396196672,92a2aa9b250d5fe1f7e7874e087a7770187433a9,1395640972645,1395640972543,102,37.5123,-6.02722,1024,8,3145728,"Parrot SA"

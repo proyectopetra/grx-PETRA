@@ -1,4 +1,4 @@
-idNodo idDispositivo tfin tinicio tdiferencia latitud longitud majordeviceclass minordeviceclass serviceclass fabricante
+idNodo,idDispositivo,tfin tinicio,tdiferencia,latitud,longitud,majordeviceclass,minordeviceclass,serviceclass,fabricante
 1388397694740,3a14b231256a121dfd2c438497c9330ba9fbeacd,1395615700443,1395615700443,0,37.5897,-5.73141,null,null,null,null
 1388397694740,91a890e951074d2e6a8b8daf8c97fe51942c1995,1395616595406,1395616595405,1,37.5897,-5.73141,null,null,null,null
 1388397694740,7bda3a8998f02969e78f4e4d7917fd4bc09ca739,1395616678912,1395616640584,38328,37.5897,-5.73141,null,null,null,null

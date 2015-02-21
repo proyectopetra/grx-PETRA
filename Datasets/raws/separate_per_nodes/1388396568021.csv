@@ -1,4 +1,4 @@
-idNodo idDispositivo tfin tinicio tdiferencia latitud longitud majordeviceclass minordeviceclass serviceclass fabricante
+idNodo,idDispositivo,tfin tinicio,tdiferencia,latitud,longitud,majordeviceclass,minordeviceclass,serviceclass,fabricante
 1388396568021,ede402ff8043dfc350034f00d812b3c38fee2715,1395641855122,1395641855020,102,37.4672,-6.00765,512,4,5898240,"Samsung Electronics"
 1388396568021,07b5c330452326ab3e3c78c8b28bef6ffd21ce2d,1395641966932,1395641966830,102,37.4672,-6.00765,512,4,5898240,"TCT Mobile Limited"
 1388396568021,ada16d38731a6f4ff238986978baa65eccca5e8a,1395645119573,1395645119471,102,37.4672,-6.00765,512,12,5898240,null

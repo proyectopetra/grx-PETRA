@@ -1,4 +1,4 @@
-idNodo idDispositivo tfin tinicio tdiferencia latitud longitud majordeviceclass minordeviceclass serviceclass fabricante
+idNodo,idDispositivo,tfin tinicio,tdiferencia,latitud,longitud,majordeviceclass,minordeviceclass,serviceclass,fabricante
 1388397145518,6076bddae8a8d0184c228cfb6ab52b23bef6c3fb,1395644966751,1395644966649,102,37.4511,-5.95452,512,12,5767168,null
 1388397145518,2483409aa57ec2206cbcd443e6dfbd721b8c66f7,1395646032545,1395646032443,102,37.4511,-5.95452,1024,8,3407872,"Infineon AG"
 1388397145518,ea706ffa52c361cbadb1b7a95e7b76068a85c760,1395646446829,1395646446728,101,37.4511,-5.95452,512,12,5898240,"Nokia Corporation"

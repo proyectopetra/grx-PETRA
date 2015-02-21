@@ -1,4 +1,4 @@
-idNodo idDispositivo tfin tinicio tdiferencia latitud longitud majordeviceclass minordeviceclass serviceclass fabricante
+idNodo,idDispositivo,tfin tinicio,tdiferencia,latitud,longitud,majordeviceclass,minordeviceclass,serviceclass,fabricante
 1351591695721,7f564553df545d49b5eedb275972ee6ff0cdb7e2,1395648287827,1395648287705,122,37.1829,-3.61411,1024,8,3145728,"Infineon AG"
 1351591695721,7a141d9b2fbd68ead27a2d0ebe00383566380eb7,1395648370391,1395648287707,82684,37.1829,-3.61411,512,12,7995392,RIM
 1351591695721,0e9b7cad750144323c8fdeb13d125b87b0651f69,1395648381866,1395648381763,103,37.1829,-3.61411,512,4,5898240,"Nokia Danmark A/S"

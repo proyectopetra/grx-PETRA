@@ -1,4 +1,4 @@
-idNodo idDispositivo tfin tinicio tdiferencia latitud longitud majordeviceclass minordeviceclass serviceclass fabricante
+idNodo,idDispositivo,tfin tinicio,tdiferencia,latitud,longitud,majordeviceclass,minordeviceclass,serviceclass,fabricante
 1351672500995,cf42c44da44a38737612bd6dae454cb320397dce,1395791567593,1395791567475,118,37.1773,-3.59856,1024,4,2097152,"PARROT S.A."
 1351672500995,f851839fda38eb7cff3156f578ea7f6cd5ccf54a,1395791591588,1395791591482,106,37.1773,-3.59856,7936,0,0,"Bluegiga Technologies OY"
 1351672500995,2247c761cf8db997c09852bd79b547aab333cea6,1395791591589,1395791591483,106,37.1773,-3.59856,1024,8,3145728,"Parrot SA"

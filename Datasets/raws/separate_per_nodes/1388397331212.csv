@@ -1,4 +1,4 @@
-idNodo idDispositivo tfin tinicio tdiferencia latitud longitud majordeviceclass minordeviceclass serviceclass fabricante
+idNodo,idDispositivo,tfin tinicio,tdiferencia,latitud,longitud,majordeviceclass,minordeviceclass,serviceclass,fabricante
 1388397331212,488b1d5012726f50c1fe195c977d7b4006b18c2e,1395619707906,1395619707804,102,37.4816,-5.97881,1024,8,2097152,"TEMIC SDS GmbH"
 1388397331212,e9a742ae88bfc4a2d51a4d4e46ecf0c02f1c5e3f,1395619832442,1395619832341,101,37.4816,-5.97881,512,12,5767168,null
 1388397331212,c275c17f64ceb7d3d7f06582899dafadd9ce4634,1395622583544,1395622583442,102,37.4816,-5.97881,512,12,7995392,RIM

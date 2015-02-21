@@ -1,4 +1,4 @@
-idNodo idDispositivo tfin tinicio tdiferencia latitud longitud majordeviceclass minordeviceclass serviceclass fabricante
+idNodo,idDispositivo,tfin tinicio,tdiferencia,latitud,longitud,majordeviceclass,minordeviceclass,serviceclass,fabricante
 1388396290670,c81960b9022dd48ecb6d70f2f50c0620a40680b4,1395647436309,1395647436207,102,37.5192,-5.98457,512,4,5898240,null
 1388396290670,dd5f3b6db85d9c06d1b52360f932f658c2906c95,1395652501182,1395652501080,102,37.5192,-5.98457,1024,8,2359296,"Parrot SA"
 1388396290670,ac3a9fd13e41cbfaa4be90724a4fb87f3cf6b332,1395652715020,1395652714919,101,37.5192,-5.98457,7936,0,0,"Free2move AB"

@@ -1,4 +1,4 @@
-idNodo idDispositivo tfin tinicio tdiferencia latitud longitud majordeviceclass minordeviceclass serviceclass fabricante
+idNodo,idDispositivo,tfin tinicio,tdiferencia,latitud,longitud,majordeviceclass,minordeviceclass,serviceclass,fabricante
 1388396029879,cf6680184189a9bd947d9097eb014df782f670d7,1395637249793,1395637249691,102,37.5901,-5.73276,1024,8,3407872,"Infineon AG"
 1388396029879,0cc278cee1e87663b7b0631c9115ce8f561f6ca7,1395639199759,1395639199657,102,37.5901,-5.73276,1024,8,3145728,"Parrot SA"
 1388396029879,fc186989f848da48db9af914772bcbe8678978d9,1395639797513,1395639797411,102,37.5901,-5.73276,1024,8,3145728,"PARROT S.A."
