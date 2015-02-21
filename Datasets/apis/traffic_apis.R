@@ -8,6 +8,8 @@ library(XML)
 
 paste0 <- function(...) paste(..., sep = "")
 join <- function(v) do.call(function(...) paste(..., sep = ","), as.list(v))
+naifnull <- function(e) ifelse(is.null(e), NA, e)
+nospace <- function(str) gsub("^\\s*|\\s*$", "", str)
 
 http_get <- function(url) content(GET(url))
 
@@ -77,25 +79,81 @@ get_ep_traffic <- function(ccaa = "",
                            nivel = "",
                            provincia = "",
                            tipo = "Todas") {
-
+  
   # Body of a POST request from Europa Press website:
   #
   # Content-Type: application/x-www-form-urlencoded
   # Content-Length: 347
   # __VIEWSTATE=%2FwEPDwUKMjEyNjQ5ODQ4MGRkU2VbKJPokWLsSlLEjOkZUVJoWVM%3D&__VIEWSTATEGENERATOR=C0A6878A&ctl00%24ContenidoCentral%24ddlCCAA=&ctl00%24ContenidoCentral%24txtCarretera=&ctl00%24ContenidoCentral%24ddlNiveles=&ctl00%24ContenidoCentral%24ddlProvincia=&ctl00%24ContenidoCentral%24ddlIncidencias=Todas&ctl00%24ContenidoCentral%24btnBuscar=Buscar
-
-
+  
+  
   url <- "http://www.europapress.es/trafico"
   params <- list(
     "__VIEWSTATE" = "%2FwEPDwUKMjEyNjQ5ODQ4MGRkU2VbKJPokWLsSlLEjOkZUVJoWVM%3D",
     "__VIEWSTATEGENERATOR" = "C0A6878A&ctl00%24ContenidoCentral%24ddlCCAA=&ctl00%24ContenidoCentral%24txtCarretera=&ctl00%24ContenidoCentral%24ddlNiveles=&ctl00%24ContenidoCentral%24ddlProvincia=&ctl00%24ContenidoCentral%24ddlIncidencias=Todas&ctl00%24ContenidoCentral%24btnBuscar=Buscar"
   )
-
+  
   resp <- content(POST(url))
   readHTMLTable(resp)$tblTrafico
 }
 
+#' @description Retrieves traffic incidents from Dirección General de Tráfico
+#' @param ccaa Numeric value indicating Autonomy
+#' @param carretera Road code
+#' @param nivel Severity level, from 1 to 5
+#' @param provincia Province code
+#' @param tipo Incident type, from 1 to 5
+#'
+#' @example get_dgt_traffic()
+get_dgt_traffic <- function(fecha) {
+  
+  url <- "http://www.dgt.es/incidencias.xml"
+  
+  if (!missing(fecha)) url <- paste0(url, "?fecha=", fecha)
+  
+  resp_xml <- content(GET(url))
+  inc_list <- xmlChildren(xmlChildren(resp_xml)[[2]])
+  
+  inc_list <- lapply(inc_list, function(i) {
+    i <- xmlToList(i)
+    c(tipo = naifnull(i$tipo),
+      causa =         naifnull(nospace(i$causa)),
+      nivel =         naifnull(nospace(i$nivel)),
+      autonomia =     naifnull(nospace(i$autonomia)),
+      provincia =     naifnull(nospace(i$provincia)),
+      poblacion =     naifnull(nospace(i$poblacion)),
+      carretera =     naifnull(nospace(i$carretera)),
+      pk_inicial =    naifnull(as.numeric(i$pk_inicial)),
+      pk_final =      naifnull(as.numeric(i$pk_final)),
+      sentido =       naifnull(nospace(i$sentido)),
+      hacia =         naifnull(nospace(i$hacia)),
+      fechahora_ini = naifnull(i$fechahora_ini))
+  })
+  inc_df <- matrix(unlist(inc_list),
+                   nrow = length(inc_list),
+                   byrow = T)
+  inc_df <- data.frame(inc_df)
+  names(inc_df) <- c("Tipo",
+                     "Causa",
+                     "Nivel",
+                     "Autonomia",
+                     "Provincia",
+                     "Poblacion",
+                     "Carretera",
+                     "PKinicial",
+                     "PKfinal",
+                     "Sentido",
+                     "Hacia",
+                     "Inicio")
+  inc_df
+}
+
+
 write.csv(get_ms_traffic(c(36.5802466, -9.0307617, 43.7075935, 2.2192383)), "bing_incidents_spain.csv")
 write.csv(get_ms_traffic(c(48.2978125, 1.2744141, 49.4252672, 3.4936523)), "bing_incidents_paris.csv")
 
-write.csv(get_ep_traffic(), "ep_incidents_spain.csv")
+dgt <- get_dgt_traffic()
+
+write.csv(dgt, "dgt_incidents_spain.csv")
+write.csv(dgt[dgt$Autonomia == "ANDALUCIA", ], "dgt_incidents_andalucia.csv")
+write.csv(dgt[dgt$Provincia == "GRANADA", ], "dgt_incidents_granada.csv")
