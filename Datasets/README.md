@@ -1,5 +1,5 @@
-## What files here are
+## What is the content of files here
 
 * dgt/allConcatjs.csv
 
-A `csv` all the other `csv` files under the same dir. Made with `node concat.js`. If you have node installed first do `npm install` and then `node concat.js`.
+A `csv` with all the other `csv` files under the same directory. Made with `concat.js`. If you have [node](http://nodejs.org) installed, first do `npm install` and then `node concat.js`.
