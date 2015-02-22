@@ -31,8 +31,17 @@ shinyUI(navbarPage(
       includeScript("js/maps.js")
     )
   ),
-  tabPanel("Devices"
-  
+  tabPanel("Traffic stations",
+    div(
+      wellPanel(
+        h3("Summary of stations"),
+        tableOutput("stations_sum"),
+        h3("Number of stations by province"),
+        plotOutput("stations_prov"),
+        h3("Number of roads by number of stations"),
+        plotOutput("stations_hist")
+      )  
+    )
   ),
   tabPanel("Traffic incidents", 
     div(
