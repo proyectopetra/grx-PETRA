@@ -28,7 +28,7 @@ var sanityMap = {
   'ó': 'o',
   'ú': 'u',
   'ü': 'u',
-  ':': ''
+ ':;': ''
 };
 
 function cleanUp(inputFile, label){
