@@ -1,13 +1,21 @@
 var fs = require('fs');
+var rm = require('rimraf');
 var through = require('through');
 var readline = require('readline');
-var outputFile = fs.createWriteStream('dgt/allConcatjs.csv');
 
+var outputFile = 'dgt/concat_all.csv';
+rm.sync(outputFile); // remove file if was there
+
+var outStream = fs.createWriteStream(outputFile);
+
+// read that dirr
 fs.readdir('dgt', function(err, dirls){
   if(err){ throw err; }
   dirls.forEach(function(inputFile){
-    if(inputFile !== 'allConcatjs.csv' && inputFile.match(/csv$/)){
-      cleanUp(inputFile);
+    if(inputFile.match(/H.*csv$/)){
+      var label = inputFile.substring(1)
+        .replace('.csv', '').toLowerCase();
+      cleanUp(inputFile, label);
     }
   });
 });
@@ -19,10 +27,11 @@ var sanityMap = {
   'í': 'i',
   'ó': 'o',
   'ú': 'u',
-  'ü': 'u'
+  'ü': 'u',
+  ':': ''
 };
 
-function cleanUp(inputFile){
+function cleanUp(inputFile, label){
   var reader = readline.createInterface({
     input: fs.createReadStream('dgt/'+inputFile),
     output: through()
@@ -45,9 +54,6 @@ function cleanUp(inputFile){
         return sanityMap[$0] || $0;
       });
 
-    var label = inputFile.substring(1)
-      .replace('.csv', '').toLowerCase();
-
-    outputFile.write(label + ';' + line + '\n');
+    outStream.write(label + ';' + line + '\n');
   });
 }

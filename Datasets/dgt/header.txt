@@ -1,0 +1,1 @@
+Tipo;Estación;Calzada;Carriles;Provincia;Población;Carretera;PK;Total;Moto;Lige;Bus;Camión;Pesa;Días
