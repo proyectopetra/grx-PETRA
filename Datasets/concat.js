@@ -27,10 +27,22 @@ var sanityMap = {
   'í': 'i',
   'ó': 'o',
   'ú': 'u',
-  'ü': 'u',
- ':;': '',
- 'poblacion:;;': 'poblacion'
+  'ü': 'u'
 };
+
+var saneRE = new RegExp(
+  Object.keys(sanityMap).join('|'), 'ig'
+);
+
+var replaceMap = {
+  ':': '',
+  'poblacion:;;': 'poblacion;',
+  'poblacion:;': 'poblacion',
+  'estacion;': '',
+  'poblacion;' : '',
+};
+
+var replaceKeys = Object.keys(replaceMap);
 
 function cleanUp(inputFile, label){
   var reader = readline.createInterface({
@@ -39,10 +51,6 @@ function cleanUp(inputFile, label){
   });
 
   reader.on('line', function(line){
-    var saneRE = new RegExp(
-      Object.keys(sanityMap).join('|'), 'ig'
-    );
-
     var num = line.match(/^\d+/);
     if(num && line.match(/[ ]+/)){
       // replace space(s) ocurrence(s) with ';'
@@ -50,10 +58,13 @@ function cleanUp(inputFile, label){
     }
 
     // ok, normalize this thing
-    line = line.toLowerCase()
-      .replace(saneRE, function($0){
+    line = line.replace(saneRE, function($0){
         return sanityMap[$0] || $0;
-      });
+      }).toLowerCase();
+
+    replaceKeys.forEach(function(key){
+      line = line.replace(key, replaceMap[key]);
+    });
 
     outStream.write(label + ';' + line + '\n');
   });
