@@ -3,7 +3,7 @@ var rm = require('rimraf');
 var through = require('through');
 var readline = require('readline');
 
-var outputFile = 'dgt/allConcatjs.csv';
+var outputFile = 'dgt/concat_all.csv';
 rm.sync(outputFile); // remove file if was there
 
 var outStream = fs.createWriteStream(outputFile);
@@ -12,7 +12,7 @@ var outStream = fs.createWriteStream(outputFile);
 fs.readdir('dgt', function(err, dirls){
   if(err){ throw err; }
   dirls.forEach(function(inputFile){
-    if(inputFile.match(/csv$/)){
+    if(inputFile.match(/H.*csv$/)){
       var label = inputFile.substring(1)
         .replace('.csv', '').toLowerCase();
       cleanUp(inputFile, label);
@@ -27,7 +27,8 @@ var sanityMap = {
   'í': 'i',
   'ó': 'o',
   'ú': 'u',
-  'ü': 'u'
+  'ü': 'u',
+  ':': ''
 };
 
 function cleanUp(inputFile, label){
