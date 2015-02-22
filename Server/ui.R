@@ -1,0 +1,49 @@
+
+library(shiny)
+
+shinyUI(navbarPage(
+  "PETRA", 
+  id = "nav",
+
+  tabPanel("Map",
+    div(class = "outer",
+      tags$head(
+        includeCSS("css/main.css"),
+        tags$link(
+          href = "http://libs.cartocdn.com/cartodb.js/v3/3.11/themes/css/cartodb.css",
+          rel = "stylesheet"
+        ),
+        tags$script(
+          src = "http://libs.cartocdn.com/cartodb.js/v3/3.11/cartodb.js",
+          type = "text/javascript"
+        )
+      ),
+      
+      sidebarPanel(id = "controls", width = 3,
+        h4("Parameters"),
+        uiOutput("cities"),
+        sliderInput("zoom", "Zoom", 1, 10, 1)
+        
+      ),
+      
+      div(id = "map"),
+
+      includeScript("js/maps.js")
+    )
+  ),
+  tabPanel("Devices"
+  
+  ),
+  tabPanel("Traffic incidents", 
+    div(
+      wellPanel(
+        dataTableOutput("incidents")
+      )  
+    )
+  ),
+  tabPanel("About",
+    div(
+      h2("About PETRA"),
+      tags$p("PETRA (Predicción del Estado de Tráfico)")
+    ))
+))
