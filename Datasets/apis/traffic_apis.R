@@ -98,11 +98,6 @@ get_ep_traffic <- function(ccaa = "",
 }
 
 #' @description Retrieves traffic incidents from Dirección General de Tráfico
-#' @param ccaa Numeric value indicating Autonomy
-#' @param carretera Road code
-#' @param nivel Severity level, from 1 to 5
-#' @param provincia Province code
-#' @param tipo Incident type, from 1 to 5
 #'
 #' @example get_dgt_traffic()
 get_dgt_traffic <- function(fecha) {
