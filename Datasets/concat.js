@@ -28,7 +28,8 @@ var sanityMap = {
   'ó': 'o',
   'ú': 'u',
   'ü': 'u',
- ':;': ''
+ ':;': '',
+ 'poblacion:;;': 'poblacion'
 };
 
 function cleanUp(inputFile, label){
