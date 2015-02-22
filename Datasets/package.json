@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "concat.js",
   "author": "",
-  "license": "ISC",
+  "license": "BSD",
   "dependencies": {
+    "rimraf": "^2.2.8",
     "through": "^2.3.6"
   },
   "devDependencies": {},
