@@ -31,5 +31,5 @@ while(i < len(lines)) :
 		PK = re.search('PK:(.*)\n',lines[i]).group(1).replace(";","").replace(" ","")
 	splitted = re.split(';| |\t',lines[i])
 	if splitted[0].startswith("1") or splitted[0].startswith("2"):
-		print tipo+";"+estacion+";"+calzada+";"+carriles+";"+provincia+";"+poblacion+";"+carretera+";"+PK+";"+splitted[0]+";"+splitted[1]+";"+splitted[2]+";"+splitted[3]+";"+splitted[4]+";"+splitted[5]+";"+splitted[14]
+		print tipo+";"+estacion+";"+calzada+";"+carriles+";"+provincia+";"+poblacion+";"+carretera+";"+PK+";"+splitted[0]+";"+splitted[1]+";"+splitted[2]+";"+splitted[3]+";"+splitted[4]+";"+splitted[5]+";"+splitted[6]+";"+splitted[14]
 	i=i+1
