@@ -57,9 +57,11 @@ function cleanUp(inputFile, label){
 
     } else {
 
-      line = line.replace(/[ ]+/g, ';');
+      line = line.replace(/[ ]+/g, ';')
+                 .replace(/[,]/g, '.');
+
       outputStream.write(
-        (label + meta + ';' + line).trim().replace(/[,]/g, '.') + '\n'
+        (label + meta + ';' + line).trim() + '\n'
       );
     }
 
