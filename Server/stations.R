@@ -1,4 +1,4 @@
-stations <- read.csv("../Datasets/dgt/all-without-0-data-years.csv", sep = ";")
+stations <- read.csv("data/all-without-0-data-years.csv", sep = ";")
 noyears <- unique(stations[, c("Tipo", "Estación", "Calzada", "Carriles", "Provincia", "Población", "Carretera", "PK")])
 
 group_by <- function(x, name, func) {

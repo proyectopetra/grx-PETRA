@@ -32,15 +32,22 @@ shinyUI(navbarPage(
     )
   ),
   tabPanel("Traffic stations",
-    div(
-      wellPanel(
-        h3("Summary of stations"),
-        tableOutput("stations_sum"),
-        h3("Number of stations by province"),
-        plotOutput("stations_prov"),
-        h3("Number of roads by number of stations"),
-        plotOutput("stations_hist")
-      )  
+    tabsetPanel(id = "pages", type = "pills", selected = "Exploration",
+      tabPanel("Exploration",
+        wellPanel(
+         h3("Summary of stations"),
+         tableOutput("stations_sum"),
+         h3("Number of stations by province"),
+         plotOutput("stations_prov"),
+         h3("Number of roads by number of stations"),
+         plotOutput("stations_hist")
+        )
+      ),
+      tabPanel("Data",
+        wellPanel(
+          dataTableOutput("stations")
+        )       
+      )
     )
   ),
   tabPanel("Traffic incidents", 
